@@ -19,14 +19,14 @@ namespace Bukimedia.PrestaSharp
         }
 
         public PrestaSharpException(string ResponseContent, string ResponseErrorMessage, Exception ResponseErrorException)
-            : base(ResponseContent + " " + ResponseErrorMessage, ResponseErrorException)
+            : base($"{ResponseContent} {ResponseErrorMessage}", ResponseErrorException)
         {
             this.ResponseContent = ResponseContent;
             this.ResponseErrorMessage = ResponseErrorMessage;
         }
 
         public PrestaSharpException(string ResponseContent, string ResponseErrorMessage, HttpStatusCode ResponseHttpStatusCode, Exception ResponseErrorException)
-            : base(ResponseContent + " " + ResponseErrorMessage + " HttpStatusCode: " + ResponseHttpStatusCode, ResponseErrorException)
+            : base($"{ResponseContent} {ResponseErrorMessage} HttpStatusCode: {ResponseHttpStatusCode}", ResponseErrorException)
         {
             this.ResponseContent = ResponseContent;
             this.ResponseErrorMessage = ResponseErrorMessage;
